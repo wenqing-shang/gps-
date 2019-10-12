@@ -1,0 +1,19 @@
+需要import的数据
+import  re
+import json
+import xlrd
+import langconv(不需要pip安装，仅需要langconv.py 和 zh_wiki.py和调用文件在同一目录下)
+import  zhon.hanzi 
+import string
+import datetime
+
+
+使用说明：
+调用 china_area,foreign_area,provinceList,pinyin_zhongwen= national_list('./2019_全球省市县.xlsx') ，加载查找所需的数据表
+调用result=stringGpsTostandarddata('台湾_太平區_太平區_永樂街92号',china_area,foreign_area,pinyin_zhongwen,provinceList)，result为获取结果。
+比如：result="台北市"
+
+
+输入数据：可以为简体、繁体、拼音三种类型。数据将具体数据对应到市级别。
+优势：包含一定的容错能力。
+      比如：中国_北京_上海_静安区，则输出结果为上海市。
